@@ -1,0 +1,8 @@
+.env
+.idea
+myenv
+*/__pycache__/
+db.sqlite3
+
+!**/migrations/__init__.py
+media
