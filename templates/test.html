@@ -1,0 +1,12 @@
+<p>
+    <form method="post">
+        {% csrf_token %}
+        {{ forms }}
+        <button>create</button>
+    </form>
+
+</p>
+
+<p>
+    {{ forms.errors }}
+</p>

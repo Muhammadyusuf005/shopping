@@ -1,0 +1,292 @@
+{% extends 'bases/basic.html' %}
+{% load product_tags %}
+
+{% block content %}
+    {% load static %}
+    {% load i18n %}
+    <!-- Shop Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <!-- Shop Sidebar Start -->
+            <div class="col-lg-3 col-md-4">
+                <!-- Price Start -->
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" checked id="price-all">
+                            <label class="custom-control-label" for="price-all">All Price</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="price-1">
+                            <label class="custom-control-label" for="price-1">$0 - $100</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="price-2">
+                            <label class="custom-control-label" for="price-2">$100 - $200</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="price-3">
+                            <label class="custom-control-label" for="price-3">$200 - $300</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="price-4">
+                            <label class="custom-control-label" for="price-4">$300 - $400</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                            <input type="checkbox" class="custom-control-input" id="price-5">
+                            <label class="custom-control-label" for="price-5">$400 - $500</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Price End -->
+
+                <!-- Color Start -->
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" checked id="color-all">
+                            <label class="custom-control-label" for="price-all">All Color</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="color-1">
+                            <label class="custom-control-label" for="color-1">Black</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="color-2">
+                            <label class="custom-control-label" for="color-2">White</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="color-3">
+                            <label class="custom-control-label" for="color-3">Red</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="color-4">
+                            <label class="custom-control-label" for="color-4">Blue</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                            <input type="checkbox" class="custom-control-input" id="color-5">
+                            <label class="custom-control-label" for="color-5">Green</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Color End -->
+
+                <!-- Size Start -->
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span>
+                </h5>
+                <div class="bg-light p-4 mb-30">
+                    <form>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" checked id="size-all">
+                            <label class="custom-control-label" for="size-all">All Size</label>
+                            <span class="badge border font-weight-normal">1000</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-1">
+                            <label class="custom-control-label" for="size-1">XS</label>
+                            <span class="badge border font-weight-normal">150</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-2">
+                            <label class="custom-control-label" for="size-2">S</label>
+                            <span class="badge border font-weight-normal">295</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-3">
+                            <label class="custom-control-label" for="size-3">M</label>
+                            <span class="badge border font-weight-normal">246</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" id="size-4">
+                            <label class="custom-control-label" for="size-4">L</label>
+                            <span class="badge border font-weight-normal">145</span>
+                        </div>
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                            <input type="checkbox" class="custom-control-input" id="size-5">
+                            <label class="custom-control-label" for="size-5">XL</label>
+                            <span class="badge border font-weight-normal">168</span>
+                        </div>
+                    </form>
+                </div>
+                <!-- Size End -->
+            </div>
+            <!-- Shop Sidebar End -->
+
+
+            <!-- Shop Product Start -->
+            <div class="col-lg-9 col-md-8">
+                <div class="row pb-3">
+                    <div class="col-12 pb-1">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <div class="d-flex">
+                                <a href="{% url 'general:clear-session' %}">
+                                    <button class="btn btn-sm btn-light">page
+                                        >>> {{ page_obj.paginator.count }}</button>
+                                </a>
+                            </div>
+
+                            <div class="ml-2 d-flex">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-light dropdown-toggle"
+                                            data-toggle="dropdown">Sorting
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                    <li><a href="?avg_rating=1">from 1 to 5 rating</a></li>
+                                    <li><a href="?avg_rating=2">from 2 to 5 rating</a></li>
+                                    <li><a href="?avg_rating=3">from 3 to 5 rating</a></li>
+                                    <li><a href="?avg_rating=4">from 4 to 5 rating</a></li>
+                                    <li><a href="?avg_rating=5">from 5 to 5 rating</a></li>
+
+                                        <form method="post" action="{% url 'products:show-avg-rating' %}">
+                                        {% csrf_token %}
+                                            <button>Best rating</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+
+                                <nav>
+                                    <ul class="pagination align-items-center justify-content-center">
+                                        {% if page_obj.has_previous %}
+                                            <li class="page-item"><a class="page-link" href="?page1=1">First</a></li>
+                                            <li class="page-item"><a class="page-link"
+                                                                     href="?page1={{ page_obj.previous_page_number }}">Previous</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a>
+                                            </li>
+                                        {% endif %}
+                                        {% for i in page_obj.paginator.page_range %}
+                                            {% if i == page_obj.number %}
+                                                <li class="page-item active"><a class="page-link" href="#">{{ i }}</a>
+                                                </li>
+                                            {% elif i >= page_obj.number|add:"-1" and i <= page_obj.number|add:"1" %}
+                                                <li class="page-item"><a class="page-link"
+                                                                         href="?page1={{ i }}">{{ i }}</a></li>
+                                            {% elif i == 1 or i == 2 or i == 3 or i == page_obj.paginator.num_pages|add:"-2" or i == page_obj.paginator.num_pages|add:"-1" or i == page_obj.paginator.num_pages %}
+                                                <li class="page-item"><a class="page-link"
+                                                                         href="?page1={{ i }}">{{ i }}</a></li>
+                                            {% elif i == page_obj.number|add:"-3" or i == page_obj.number|add:"3" %}
+                                                <li class="page-item disabled"><a class="page-link" href="#">...</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if page_obj.has_next %}
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   href="?page1={{ page_obj.next_page_number }}">
+                                                    Next
+                                                </a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   href="?page1={{ page_obj.paginator.num_pages }}">
+                                                    Last
+                                                </a>
+                                            </li>
+                                        {% else %}
+                                            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% for product in page_obj %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div style="height: 400px" class="product-img position-relative overflow-hidden">
+                                    {% if product.main_image %}
+                                        <img src="{{ product.main_image.url }}" alt="" width="300" height="500">
+                                    {% else %}
+                                        <img class="img-fluid w-100" src="default-image-url" alt="">
+                                    {% endif %}
+                                    <div class="product-action">
+                                        <form method="post"
+                                              action="{% url 'carts:create-cart' product_id=product.id %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <button type="submit" class="btn btn-outline-dark btn-square wishlist-btn">
+                                                {% if not product.id in cart_user %}
+                                                    <i class="fa fa-shopping-cart active"></i>
+                                                {% else %}
+                                                    <i class="fa fa-shopping-cart"></i>
+
+                                                {% endif %}
+                                            </button>
+                                        </form>
+
+
+                                        <!-- Wishlist form -->
+                                        <form method="post" action="{% url 'wishlists:wishlist-create' %}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <button type="submit" class="btn btn-outline-dark btn-square wishlist-btn">
+                                                {% if product.id in user_wishlist %}
+                                                    <i class="fa fa-heart active"></i>
+                                                {% else %}
+                                                    <i class="far fa-heart"></i>
+                                                {% endif %}
+                                            </button>
+                                        </form>
+
+                                        <a class="btn btn-outline-dark btn-square" href="">
+                                            <i class="fa fa-sync-alt"></i>
+                                        </a>
+                                        <a class="btn btn-outline-dark btn-square"
+                                           href="{% url 'products:detail-page' pk=product.pk %}">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="{% url 'products:detail-page' product.id %}">{{ product.title|truncatechars:20 }}</a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <a href="{% url 'products:detail-page' product.id %}">
+                                            <h5>{% get_price_by_currency currency product.price %}</h5>
+                                        </a>
+                                        <a href="{% url 'products:detail-page' product.id %}">
+                                            <h6 class="text-muted ml-2">
+                                            <del>{% get_price_by_currency currency product.old_price %}</del>
+                                            </h6>
+                                        </a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center mb-1">
+                                        {% decimal_to_range product.avg_rating as Star %}
+                                        {% for rating in Star %}
+                                            <small class="fa fa-star text-primary mr-1"></small>
+                                        {% endfor %}
+
+                                        <h5>({{ product.comment_count }})</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Product End -->
+    <!-- Shop End -->
+
+{% endblock %}

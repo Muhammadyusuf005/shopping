@@ -1,0 +1,178 @@
+{% load static %}
+{% load i18n %}
+<!Doctype html>
+
+<html
+  lang="en"
+  class="light-style layout-wide customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+  data-style="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>{% translate 'Register Basic - Pages | Materio - Bootstrap Material Design Admin Template' %}</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.ico' %}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/remixicon/remixicon.css' %}" />
+
+    <!-- Menu waves for no-customizer fix -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/node-waves/node-waves.css' %}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/page-auth.css' %}" />
+
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'assets/js/config.js' %}"></script>
+  </head>
+
+  <body>
+    <!-- Content -->
+
+    <div class="position-relative">
+      <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner py-6 mx-4">
+          <!-- Register Card -->
+          <div class="card p-7">
+            
+              <!-- logo -->
+                <div class="col-lg-4">
+                    <a href="" class="text-decoration-none">
+                        <span class="h1 text-primary bg-dark px-2">{% translate 'Multi' %}</span>
+                        <span class="h1 text-dark bg-primary px-2 ml-n1">{% translate 'Shop' %}</span>
+                    </a>
+                </div>
+            <!-- end logo -->
+
+                <div class="card-body mt-1">
+              <h4 class="mb-1">{% translate 'Adventure starts here 🚀' %}</h4>
+              <p class="mb-5">{% translate 'Make your app management easy and fun!' %}</p>
+
+              <form id="formAuthentication" class="mb-5" action="{% url 'authentications:user-register' %}" method="POST">
+                  {% csrf_token %}
+                   {% for i in messages %}
+                    {{ i }}
+                   {% endfor %}
+                <div class="form-floating form-floating-outline mb-5">
+                  {{ forms.first_name }}
+                  <label for="username">{% translate 'Username' %}</label>
+                </div>
+                <div class="form-floating form-floating-outline mb-5">
+                    {{ forms.email }}
+                  <label for="email">{% translate 'Email' %}</label>
+                </div>
+                <div class="mb-5 form-password-toggle">
+                  <div class="input-group input-group-merge">
+                    <div class="form-floating form-floating-outline">
+                      {{ forms.password }}
+                      <label for="password">{% translate 'Password' %}</label>
+                    </div>
+                    <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
+                  </div>
+                </div>
+
+                  <div class="mb-5 form-password-toggle">
+                  <div class="input-group input-group-merge">
+                    <div class="form-floating form-floating-outline">
+                      {{ forms.confirm_password }}
+                      <label for="password">{% translate 'Password' %}</label>
+                    </div>
+                    <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
+                  </div>
+                </div>
+
+
+                <div class="mb-5 py-2">
+                  <div class="form-check mb-0">
+                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+                    <label class="form-check-label" for="terms-conditions">
+                      I agree to
+                      <a href="javascript:void(0);">{% translate 'privacy policy & terms' %}</a>
+                    </label>
+                  </div>
+                </div>
+                <button class="btn btn-primary d-grid w-100 mb-5" type="submit">{% translate 'Sign up' %}</button>
+              </form>
+
+
+              <p class="text-center mb-5">
+                <span>{% translate 'Already have an account?' %}</span>
+                <a href="{% url 'authentications:login-page' %}">
+                  <span>{% translate 'Sign in instead' %}</span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <!-- Register Card -->
+          <img
+            src="{% static 'assets/img/illustrations/tree-3.png' %}"
+            alt="auth-tree"
+            class="authentication-image-object-left d-none d-lg-block" />
+          <img
+            src="{% static 'assets/img/illustrations/auth-basic-mask-light.png' %}"
+            class="authentication-image d-none d-lg-block"
+            height="172"
+            alt="triangle-bg"
+            data-app-light-img="illustrations/auth-basic-mask-light.png"
+            data-app-dark-img="illustrations/auth-basic-mask-dark.png" />
+          <img
+            src="{% static 'assets/img/illustrations/tree.png' %}"
+            alt="auth-tree"
+            class="authentication-image-object-right d-none d-lg-block" />
+        </div>
+      </div>
+    </div>
+
+    <!-- / Content -->
+
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/node-waves/node-waves.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+
+    <!-- Place this tag before closing body tag for github widget button. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
